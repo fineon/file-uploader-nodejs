@@ -1,0 +1,20 @@
+{
+  "name": "file-uploader-nodejs",
+  "version": "1.0.0",
+  "description": "a simple demo of handling file uploads in node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack serve --open"
+  },
+  "author": "ian-nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  }
+}
