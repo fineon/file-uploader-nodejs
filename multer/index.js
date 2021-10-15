@@ -43,7 +43,8 @@ app.post('/upload-profile-pic', (req, res) => {
         }
 
         // Display uploaded image for user validation
-        res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
+        res.send(`You have uploaded this image: <hr/><img src="./${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
+        console.log(req.file.path)
     });
 });
 
@@ -53,6 +54,9 @@ app.post('/upload-multiple-images', (req, res) => {
     let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).array('multiple_images', 10);
 
     upload(req, res, function(err) {
+        
+        console.log(req.files)
+
         if (req.fileValidationError) {
             return res.send(req.fileValidationError);
         }
@@ -80,8 +84,9 @@ app.post('/upload-multiple-images', (req, res) => {
     });
 });
 
+//serving html file in the public server as a quick dev web server
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    express.static('./public/index.html')
   })
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

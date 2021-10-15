@@ -12,9 +12,5 @@
   "dependencies": {
     "express": "^4.17.1",
     "multer": "^1.4.3"
-  },
-  "devDependencies": {
-    "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
   }
 }
